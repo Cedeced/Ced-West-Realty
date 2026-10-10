@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What's My Home Worth? Free Home Value Estimate | Ced-West Realty</title>
+<meta name="description" content="Request a free, no-obligation home value estimate from Cedrick “Ced-West” Grizzard, Los Angeles Realtor. A personal comparative market analysis based on recent sales near you.">
+<link rel="canonical" href="https://ced-west.com/home-value">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ced-west.com/home-value">
+<meta property="og:title" content="What's your home worth? Free home value estimate from Ced-West Realty">
+<meta property="og:description" content="A personal comparative market analysis based on recent sales near you. No cost, no obligation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4efe8;
+    --ink: #15171f;
+    --body: #3a3b42;
+    --accent: #7a1f33;
+    --line: #d9d1c5;
+    --field: #8a8378;
+    --muted: #c9c2b8;
+    --gutter: max(16px, 6vw);
+    --serif: 'Bodoni Moda', Georgia, serif;
+    --sans: 'Hanken Grotesk', Helvetica, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+
+  /* Header — mirrors the home page */
+  header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px; padding: 22px var(--gutter); border-bottom: 1px solid var(--line); }
+  .logo { display: flex; align-items: baseline; gap: 10px; font-family: var(--serif); font-size: 28px; font-weight: 600; letter-spacing: 0.02em; }
+  nav { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 15px; font-weight: 500; }
+  nav a { padding: 12px 0; }
+  nav a.cta { padding: 13px 22px; background: var(--accent); color: #fff; font-weight: 600; border-radius: 2px; }
+  @media (max-width: 760px) { nav a:not(.cta) { display: none; } .logo { font-size: 24px; } }
+
+  /* Hero + form */
+  .hero { display: flex; flex-wrap: wrap; gap: 56px; padding: 72px var(--gutter) 88px; align-items: flex-start; }
+  .intro { flex: 1 1 420px; display: flex; flex-direction: column; gap: 26px; }
+  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+  h1 { margin: 0; font-family: var(--serif); font-weight: 500; font-size: clamp(42px, 5.4vw, 80px); line-height: 1.02; letter-spacing: -0.01em; }
+  h1 em { color: var(--accent); }
+  .lede { margin: 0; font-size: 19px; line-height: 1.7; color: var(--body); max-width: 560px; }
+  .gets { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  .gets li { display: flex; gap: 14px; font-size: 17px; line-height: 1.55; color: var(--body); }
+  .gets li::before { content: ""; flex: 0 0 8px; height: 8px; margin-top: 9px; background: var(--accent); }
+  .gets strong { color: var(--ink); font-weight: 600; }
+  .direct { font-size: 16px; color: var(--body); line-height: 1.7; }
+  .direct a { color: var(--ink); font-weight: 600; border-bottom: 1px solid var(--field); }
+
+  .card { flex: 1 1 460px; max-width: 640px; background: #fff; border: 1px solid var(--line); padding: clamp(24px, 3.4vw, 40px); }
+  .card h2 { margin: 0 0 6px; font-family: var(--serif); font-weight: 500; font-size: 30px; line-height: 1.15; }
+  .card .sub { margin: 0 0 26px; font-size: 15px; color: var(--body); line-height: 1.6; }
+  fieldset { border: 0; margin: 0 0 26px; padding: 0; min-width: 0; }
+  legend { padding: 0; margin-bottom: 14px; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; }
+  .full { grid-column: 1 / -1; }
+  .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  label, .label { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+  .opt { font-weight: 500; text-transform: none; letter-spacing: 0; color: #6b6a70; }
+  input, select, textarea { width: 100%; height: 48px; padding: 0 12px; font: inherit; font-size: 16px; color: var(--ink); border: 1px solid var(--field); background: #fff; border-radius: 2px; }
+  textarea { height: auto; padding: 12px 14px; line-height: 1.5; resize: vertical; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+  .choices { display: flex; flex-wrap: wrap; gap: 8px; }
+  .choices label { position: relative; text-transform: none; letter-spacing: 0; font-weight: 500; font-size: 15px; }
+  .choices input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .choices span { display: inline-block; padding: 11px 16px; border: 1px solid var(--field); border-radius: 2px; cursor: pointer; background: #fff; }
+  .choices input:checked + span { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  .choices input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .consent { margin: 0 0 18px; font-size: 13px; line-height: 1.6; color: #6b6a70; }
+  button[type=submit] { width: 100%; height: 56px; padding: 0 28px; background: var(--ink); color: var(--bg); font: inherit; font-size: 16px; font-weight: 600; border: 0; border-radius: 2px; cursor: pointer; }
+  button[type=submit]:hover { background: var(--accent); }
+  button[disabled] { opacity: 0.6; cursor: wait; }
+  .hp { position: absolute; left: -9999px; }
+  .status { margin-top: 14px; font-size: 15px; line-height: 1.6; }
+  .status.err { color: #a3162c; }
+  .thanks { display: none; text-align: left; }
+  .thanks h2 { color: var(--accent); }
+  .sent .thanks { display: block; }
+  .sent form { display: none; }
+
+  /* How it works */
+  .how { padding: 88px var(--gutter); background: var(--accent); color: #fff; }
+  .how h2 { margin: 0 0 40px; font-family: var(--serif); font-weight: 500; font-size: clamp(34px, 4vw, 56px); line-height: 1.05; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 36px; counter-reset: s; }
+  .step { border-top: 1px solid rgba(255,255,255,0.4); padding-top: 20px; }
+  .step::before { counter-increment: s; content: "0" counter(s); display: block; font-family: var(--serif); font-size: 36px; margin-bottom: 10px; }
+  .step h3 { margin: 0 0 8px; font-size: 19px; font-weight: 700; }
+  .step p { margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.88); }
+
+  footer { padding: 48px var(--gutter); background: var(--ink); color: var(--muted); display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; font-size: 14px; line-height: 1.7; }
+  footer .logo { color: var(--bg); font-size: 24px; font-weight: 400; margin-bottom: 6px; }
+  footer a { color: var(--bg); }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="/"><span>Ced-West</span><span>Realty</span></a>
+  <nav aria-label="Primary">
+    <a href="/#about">About</a>
+    <a href="/#services">Services</a>
+    <a href="/#management">Property Management</a>
+    <a href="/#marketing">Marketing</a>
+    <a class="cta" href="/#contact">Book a consult</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="intro">
+      <div class="eyebrow">Free home value estimate · Los Angeles</div>
+      <h1>What is your home <em>worth</em> today?</h1>
+      <p class="lede">Online estimates can't see your upgrades, your street, or what buyers are paying right now. Ced will prepare a personal comparative market analysis for your property, at no cost and with no obligation.</p>
+      <ul class="gets">
+        <li><span><strong>A value range based on real sales</strong> of similar homes near you, not an automated guess.</span></li>
+        <li><span><strong>Ced's honest read on timing and pricing</strong> for your neighborhood and goals.</span></li>
+        <li><span><strong>Which improvements are worth it</strong> before you sell, and which aren't.</span></li>
+        <li><span><strong>Options if you're not ready to sell,</strong> including leasing and property management.</span></li>
+      </ul>
+      <p class="direct">Prefer to talk now? Call <a href="tel:+13237339378">323-733-WEST (9378)</a> or email <a href="mailto:Ced@Ced-West.com">Ced@Ced-West.com</a>.</p>
+    </div>
+
+    <div class="card" id="request">
+      <form id="hv-form" action="https://api.web3forms.com/submit" method="POST">
+        <h2>Request your home value</h2>
+        <p class="sub">Takes about a minute. Ced follows up personally.</p>
+
+        <input type="hidden" name="access_key" value="bc810a58-8cb2-40b8-865d-b5b19df45010">
+        <input type="hidden" name="subject" value="New home value request — ced-west.com">
+        <input type="hidden" name="from_name" value="Ced-West Realty website">
+        <input type="hidden" name="form" value="Home value request">
+        <input type="hidden" name="redirect" value="https://ced-west.com/home-value?sent=1">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <fieldset>
+          <legend>The property</legend>
+          <div class="grid">
+            <div class="field full">
+              <label for="hv-address">Street address</label>
+              <input id="hv-address" name="address" autocomplete="street-address" required>
+            </div>
+            <div class="field">
+              <label for="hv-city">City</label>
+              <input id="hv-city" name="city" autocomplete="address-level2" required>
+            </div>
+            <div class="field">
+              <label for="hv-zip">ZIP</label>
+              <input id="hv-zip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" required>
+            </div>
+            <div class="field">
+              <label for="hv-type">Property type</label>
+              <select id="hv-type" name="property_type" required>
+                <option value="" disabled selected>Choose one</option>
+                <option>Single-family home</option>
+                <option>Condo / townhome</option>
+                <option>Multi-family (2–4 units)</option>
+                <option>Apartment building (5+ units)</option>
+                <option>Land / lot</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="hv-occupancy">Currently</label>
+              <select id="hv-occupancy" name="occupancy">
+                <option value="" disabled selected>Choose one</option>
+                <option>I live there</option>
+                <option>Rented to tenants</option>
+                <option>Vacant</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="hv-beds">Bedrooms <span class="opt">(optional)</span></label>
+              <input id="hv-beds" name="bedrooms" inputmode="numeric">
+            </div>
+            <div class="field">
+              <label for="hv-baths">Bathrooms <span class="opt">(optional)</span></label>
+              <input id="hv-baths" name="bathrooms" inputmode="decimal">
+            </div>
+            <div class="field full">
+              <label for="hv-sqft">Approx. square feet <span class="opt">(optional)</span></label>
+              <input id="hv-sqft" name="square_feet" inputmode="numeric">
+            </div>
+            <div class="field full">
+              <span class="label" id="cond-label">Condition</span>
+              <div class="choices" role="radiogroup" aria-labelledby="cond-label">
+                <label><input type="radio" name="condition" value="Move-in ready"><span>Move-in ready</span></label>
+                <label><input type="radio" name="condition" value="Needs some updates"><span>Needs some updates</span></label>
+                <label><input type="radio" name="condition" value="Needs major work"><span>Needs major work</span></label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your plans</legend>
+          <div class="grid">
+            <div class="field full">
+              <span class="label" id="time-label">When might you sell?</span>
+              <div class="choices" role="radiogroup" aria-labelledby="time-label">
+                <label><input type="radio" name="timeline" value="As soon as possible" required><span>ASAP</span></label>
+                <label><input type="radio" name="timeline" value="1–3 months"><span>1–3 months</span></label>
+                <label><input type="radio" name="timeline" value="3–6 months"><span>3–6 months</span></label>
+                <label><input type="radio" name="timeline" value="6–12 months"><span>6–12 months</span></label>
+                <label><input type="radio" name="timeline" value="Just curious"><span>Just curious</span></label>
+              </div>
+            </div>
+            <div class="field full">
+              <label for="hv-notes">Anything Ced should know? <span class="opt">(optional)</span></label>
+              <textarea id="hv-notes" name="notes" rows="3" placeholder="Recent upgrades, reason for moving, questions…"></textarea>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Where to send it</legend>
+          <div class="grid">
+            <div class="field full">
+              <label for="hv-name">Name</label>
+              <input id="hv-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="hv-phone">Phone</label>
+              <input id="hv-phone" name="phone" type="tel" autocomplete="tel" required>
+            </div>
+            <div class="field">
+              <label for="hv-email">Email</label>
+              <input id="hv-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field full">
+              <span class="label" id="pref-label">Best way to reach you</span>
+              <div class="choices" role="radiogroup" aria-labelledby="pref-label">
+                <label><input type="radio" name="preferred_contact" value="Call" checked><span>Call</span></label>
+                <label><input type="radio" name="preferred_contact" value="Text"><span>Text</span></label>
+                <label><input type="radio" name="preferred_contact" value="Email"><span>Email</span></label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <p class="consent">By submitting, you agree that Cedrick Grizzard may contact you by phone, text, or email about your request. No obligation, and your information is never sold.</p>
+        <button type="submit">Get my home value</button>
+        <div class="status" id="hv-status" role="status" aria-live="polite"></div>
+      </form>
+
+      <div class="thanks" tabindex="-1" id="hv-thanks">
+        <h2>Thank you, request received.</h2>
+        <p class="sub">Ced will review recent sales near your property and reach out personally. If it's urgent, call <a href="tel:+13237339378"><strong>323-733-WEST (9378)</strong></a>.</p>
+        <a class="direct" href="/"><strong>← Back to Ced-West Realty</strong></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><h3>Tell Ced about the home</h3><p>Share the address and a few details. It takes about a minute.</p></div>
+      <div class="step"><h3>Ced runs the numbers</h3><p>He compares recent sales, active listings, and local demand for homes like yours.</p></div>
+      <div class="step"><h3>Talk it through</h3><p>You get a value range and a clear plan, whether you sell now, later, or lease it out.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <div class="logo"><span>Ced-West</span><span>Realty</span></div>
+    Cedrick J. Grizzard, Realtor® · DRE #01996416<br>
+    Pinnacle Estate Properties · DRE #00905345<br>
+    Member, National Association of Realtors®<br>
+    Member, California Association of Realtors®<br>
+    Equal Housing Opportunity
+  </div>
+  <div>
+    <a href="tel:+13237339378">323-733-WEST (9378)</a><br>
+    <a href="mailto:Ced@Ced-West.com">Ced@Ced-West.com</a><br>
+    © 2026 Ced-West Realty. All rights reserved.
+  </div>
+</footer>
+
+<script>
+(function () {
+  var card = document.getElementById('request');
+  var form = document.getElementById('hv-form');
+  var status = document.getElementById('hv-status');
+  var btn = form.querySelector('button[type=submit]');
+
+  function showThanks() {
+    card.classList.add('sent');
+    document.getElementById('hv-thanks').focus({ preventScroll: true });
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  if (/[?&]sent=1/.test(location.search)) showThanks();
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    var data = {};
+    new FormData(form).forEach(function (v, k) { data[k] = v; });
+    delete data.redirect;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    status.className = 'status';
+    status.textContent = '';
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (!res.success) throw new Error(res.message || 'Request failed');
+        form.reset();
+        showThanks();
+      })
+      .catch(function () {
+        status.className = 'status err';
+        status.innerHTML = 'Something went wrong sending your request. Please call <a href="tel:+13237339378"><strong>323-733-9378</strong></a> or email <a href="mailto:Ced@Ced-West.com"><strong>Ced@Ced-West.com</strong></a>.';
+      })
+      .then(function () {
+        btn.disabled = false;
+        btn.textContent = 'Get my home value';
+      });
+  });
+})();
+</script>
+</body>
+</html>
