@@ -103,6 +103,7 @@
   .cw-social a{color:#c9c2b8;display:inline-flex;transition:color .2s}.cw-social a:hover,.cw-social a:focus-visible{color:#f4efe8}
   nav a[aria-current="page"]{color:var(--accent)}
   .logo small { font-family: var(--sans, inherit); font-size: 13px; font-weight: 400; letter-spacing: 0.06em; color: #5c5650; }
+  .pep-indent::before{content:"Pi";visibility:hidden}
 </style>
 <style>
   .cw-mobile-bar{display:none}
@@ -118,7 +119,7 @@
 <body>
 
 <header id="top">
-  <a class="logo" href="/"><span>Pinnacle Estate Properties Inc.</span><small>Cedrick J. Grizzard · Realtor® · DRE #01996416</small></a>
+  <a class="logo" href="/"><span>Pinnacle Estate<br><span class="pep-indent" aria-hidden="true"></span>Properties Inc.</span><small>Cedrick J. Grizzard · Realtor® · DRE #01996416</small></a>
   <nav aria-label="Primary">
     <a href="/#about">About</a>
     <a href="/#services">Services</a>
@@ -286,7 +287,7 @@
 
 <footer class="pin" style="box-sizing: border-box; width: 100%; padding: 48px 6vw; color: #c9c2b8; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; align-items: flex-start; font-size: 14px; line-height: 1.7;">
 <div style="display: flex; flex-direction: column; gap: 6px;">
-<span style="font-family: 'Bodoni Moda', Georgia, serif; font-size: 24px; color: #f4efe8;">Pinnacle Estate Properties Inc.</span>
+<span style="font-family: 'Bodoni Moda', Georgia, serif; font-size: 24px; color: #f4efe8; display: inline-block; line-height: 1.15;">Pinnacle Estate<br><span class="pep-indent" aria-hidden="true"></span>Properties Inc.</span>
 <span>Cedrick J. Grizzard, Realtor® · DRE #01996416</span>
 <span>Pinnacle Estate Properties Inc. · DRE #00905345</span>
 </div>
