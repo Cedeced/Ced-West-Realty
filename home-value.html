@@ -4,11 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>What's My Home Worth? Free Home Value Estimate | Ced-West Realty</title>
-<meta name="description" content="Request a free, no-obligation home value estimate from Cedrick “Ced-West” Grizzard, Los Angeles Realtor. A personal comparative market analysis based on recent sales near you.">
+<meta name="description" content="Request a free, no-obligation home value estimate from Cedrick J. “Ced-West” Grizzard, Southern California Realtor. A personal comparative market analysis based on recent sales near you.">
 <link rel="canonical" href="https://ced-west.com/home-value">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ced-west.com/home-value">
 <meta property="og:title" content="What's your home worth? Free home value estimate from Ced-West Realty">
+<meta property="og:image" content="https://ced-west.com/portrait.jpg">
+<meta name="twitter:card" content="summary">
 <meta property="og:description" content="A personal comparative market analysis based on recent sales near you. No cost, no obligation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,6 +99,16 @@
   footer .logo { color: var(--bg); font-size: 24px; font-weight: 400; margin-bottom: 6px; }
   footer a { color: var(--bg); }
 </style>
+<style>
+  .cw-mobile-bar{display:none}
+  @media (max-width:720px){
+    .cw-mobile-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;background:#15171f;border-top:1px solid #3a3b42;padding-bottom:env(safe-area-inset-bottom)}
+    .cw-mobile-bar a{flex:1;text-align:center;padding:16px 0;color:#f4efe8;font-weight:600;font-size:16px;text-decoration:none}
+    .cw-mobile-bar a+a{border-left:1px solid #3a3b42}
+    .cw-mobile-bar a:last-child{background:#7a1f33}
+    body{padding-bottom:56px}
+  }
+</style>
 </head>
 <body>
 
@@ -107,14 +119,14 @@
     <a href="/#services">Services</a>
     <a href="/#management">Property Management</a>
     <a href="/#marketing">Marketing</a>
-    <a class="cta" href="/#contact">Book a consult</a>
+    <a class="cta" href="https://calendly.com/ced-west/60min" target="_blank" rel="noopener">Book a consult</a>
   </nav>
 </header>
 
 <main>
   <section class="hero">
     <div class="intro">
-      <div class="eyebrow">Free home value estimate · Los Angeles</div>
+      <div class="eyebrow">Free home value estimate · Southern California</div>
       <h1>What is your home <em>worth</em> today?</h1>
       <p class="lede">Online estimates can't see your upgrades, your street, or what buyers are paying right now. Ced will prepare a personal comparative market analysis for your property, at no cost and with no obligation.</p>
       <ul class="gets">
@@ -243,7 +255,7 @@
           </div>
         </fieldset>
 
-        <p class="consent">By submitting, you agree that Cedrick Grizzard may contact you by phone, text, or email about your request. No obligation, and your information is never sold.</p>
+        <p class="consent">By submitting, you agree that Cedrick J. Grizzard may contact you by phone, text, or email about your request. No obligation, and your information is never sold.</p>
         <button type="submit">Get my home value</button>
         <div class="status" id="hv-status" role="status" aria-live="polite"></div>
       </form>
@@ -328,5 +340,10 @@
   });
 })();
 </script>
+<nav class="cw-mobile-bar" aria-label="Quick contact">
+<a href="tel:+13237339378">Call</a>
+<a href="sms:+13237339378">Text</a>
+<a href="https://calendly.com/ced-west/60min" target="_blank" rel="noopener">Book</a>
+</nav>
 </body>
 </html>
