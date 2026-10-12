@@ -77,6 +77,33 @@ select{appearance:auto}
   header nav{gap:4px 20px !important}
 }
   .pep-indent::before{content:"Pi";visibility:hidden}
+
+/* Phone: tighter spacing */
+@media (max-width:720px){
+  header{padding:14px 20px !important;gap:10px !important}
+  header nav{gap:2px 18px !important}
+  header nav a:not(.cta):not([href*="calendly"]){padding:8px 0 !important}
+  footer{padding:32px 20px !important;gap:18px 32px !important}
+}
+@media (max-width:720px){
+  header nav a[href^="#"]{display:none !important}
+  body>div>section{padding-top:44px !important;padding-bottom:44px !important;gap:24px !important}
+  #top{padding-top:28px !important}
+  #top>div{gap:18px !important}
+  section[aria-label="At a glance"]{padding-top:28px !important;padding-bottom:28px !important;grid-template-columns:1fr 1fr !important;gap:18px !important}
+  section[aria-label="At a glance"] span:first-child{font-size:30px !important}
+  #about>div,#management>div,#marketing>div,#contact>div{gap:14px !important}
+  #about>div:last-child{font-size:17px !important;line-height:1.6 !important}
+  #about blockquote{font-size:23px !important;padding-top:18px !important;margin-top:4px !important}
+  #areas{padding-top:0 !important}
+  #services>div:last-child{gap:12px !important}
+  #services article{padding:20px !important;gap:8px !important}
+  #services article h3{font-size:24px !important}
+  #management li{padding:13px 0 !important}
+  #marketing>div:last-child>div{padding:18px 0 !important;gap:6px !important}
+  #contact form{padding:22px !important;gap:14px !important}
+  #contact>div>div{margin-top:0 !important;gap:4px !important}
+}
 </style>
 </head>
 <body>
