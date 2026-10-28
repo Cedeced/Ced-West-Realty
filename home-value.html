@@ -291,6 +291,7 @@
           </div>
         </fieldset>
 
+        <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" style="min-height:78px;"></div>
         <p class="consent">By submitting, you agree that Cedrick J. Grizzard may contact you by phone, text, or email about your request. No obligation, and your information is never sold.</p>
         <button type="submit">Get my home value</button>
         <div class="status" id="hv-status" role="status" aria-live="polite"></div>
@@ -352,6 +353,12 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (!form.reportValidity()) return;
+    var cap = form.querySelector('[name="h-captcha-response"]');
+    if (!cap || !cap.value) {
+      status.className = 'status err';
+      status.textContent = 'Please check the “I am human” box above the button.';
+      return;
+    }
     var data = {};
     new FormData(form).forEach(function (v, k) { data[k] = v; });
     delete data.redirect;
@@ -368,9 +375,11 @@
       .then(function (res) {
         if (!res.success) throw new Error(res.message || 'Request failed');
         form.reset();
+        if (window.hcaptcha) { try { hcaptcha.reset(); } catch (err) {} }
         showThanks();
       })
       .catch(function () {
+        if (window.hcaptcha) { try { hcaptcha.reset(); } catch (err) {} }
         status.className = 'status err';
         status.innerHTML = 'Something went wrong sending your request. Please call <a href="tel:+13237339378"><strong>323-733-9378</strong></a> or email <a href="mailto:Ced@Ced-West.com"><strong>Ced@Ced-West.com</strong></a>.';
       })
@@ -386,5 +395,6 @@
 <a href="sms:+13237339378">Text</a>
 <a href="https://calendly.com/ced-west/60min" target="_blank" rel="noopener">Book</a>
 </nav>
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </body>
 </html>

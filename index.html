@@ -303,6 +303,7 @@ select{appearance:auto}
 <label for="cw-msg" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">A few details</label>
 <textarea id="cw-msg" rows="4" maxlength="3000" style="box-sizing: border-box; width: 100%; padding: 12px 14px; font-size: 16px; line-height: 1.5; border: 1px solid #8a8378; background: #ffffff; border-radius: 2px; resize: vertical;"></textarea>
 </div>
+<div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" style="min-height:78px;"></div>
 <input id="cw-bot" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;">
 <button type="submit" style="height: 54px; padding: 0 28px; background: #15171f; color: #f4efe8; font-family: inherit; font-size: 16px; font-weight: 600; border: 0; border-radius: 2px; cursor: pointer;">Send to Ced</button>
 <p class="cw-privacy">Ced uses your information only to respond to your request. It is never sold or shared.</p>
@@ -374,6 +375,13 @@ select{appearance:auto}
       note.textContent = 'That email address doesn’t look right. Please check it.';
       return;
     }
+    var cap = form.querySelector('[name="h-captcha-response"]');
+    data['h-captcha-response'] = cap ? cap.value : '';
+    if (!data['h-captcha-response']) {
+      note.style.color = '#a3162c';
+      note.textContent = 'Please check the “I am human” box above the Send button.';
+      return;
+    }
     var label = btn.textContent;
     var bot = document.getElementById('cw-bot');
     if (bot && bot.checked) { form.innerHTML = '<p style="margin:0;">Thank you.</p>'; return; }
@@ -387,6 +395,7 @@ select{appearance:auto}
       form.innerHTML = '<h3 style="margin:0;font-family:\'Bodoni Moda\',Georgia,serif;font-weight:500;font-size:32px;color:#7a1f33;">Thank you. Message received.</h3>' +
         '<p style="margin:0;font-size:17px;line-height:1.7;color:#3a3b42;">Ced will follow up personally. If it’s urgent, call <a href="tel:+13237339378" style="font-weight:600;color:#15171f;">323-733-WEST (9378)</a>.</p>';
     }).catch(function () {
+      if (window.hcaptcha) { try { hcaptcha.reset(); } catch (err) {} }
       btn.disabled = false; btn.textContent = label;
       note.style.color = '#a3162c';
       note.innerHTML = 'Something went wrong sending your message. Please call <a href="tel:+13237339378" style="font-weight:600;">323-733-9378</a> or email <a href="mailto:Ced@Ced-West.com" style="font-weight:600;">Ced@Ced-West.com</a>.';
@@ -395,5 +404,6 @@ select{appearance:auto}
 })();
 </script>
 
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </body>
 </html>
