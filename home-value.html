@@ -64,7 +64,7 @@
   .full { grid-column: 1 / -1; }
   .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
   label, .label { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
-  .opt { font-weight: 500; text-transform: none; letter-spacing: 0; color: #6b6a70; }
+  .opt { font-weight: 500; text-transform: none; letter-spacing: 0; color: #56555b; }
   input, select, textarea { width: 100%; height: 48px; padding: 0 12px; font: inherit; font-size: 16px; color: var(--ink); border: 1px solid var(--field); background: #fff; border-radius: 2px; }
   textarea { height: auto; padding: 12px 14px; line-height: 1.5; resize: vertical; }
   input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
@@ -74,7 +74,7 @@
   .choices span { display: inline-block; padding: 11px 16px; border: 1px solid var(--field); border-radius: 2px; cursor: pointer; background: #fff; }
   .choices input:checked + span { background: var(--ink); border-color: var(--ink); color: var(--bg); }
   .choices input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .consent { margin: 0 0 18px; font-size: 13px; line-height: 1.6; color: #6b6a70; }
+  .consent { margin: 0 0 18px; font-size: 13px; line-height: 1.6; color: #56555b; }
   button[type=submit] { width: 100%; height: 56px; padding: 0 28px; background: var(--ink); color: var(--bg); font: inherit; font-size: 16px; font-weight: 600; border: 0; border-radius: 2px; cursor: pointer; }
   button[type=submit]:hover { background: var(--accent); }
   button[disabled] { opacity: 0.6; cursor: wait; }
@@ -142,9 +142,16 @@
   .step::before{font-size:28px !important;margin-bottom:4px !important}
 }
   .cw-brand .pep-logo, .logo .pep-logo{display:block;align-self:stretch;width:0;min-width:100%;height:auto}
+
+  /* Accessibility */
+  .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+  .skip-link{position:absolute;left:12px;top:-100px;z-index:100;padding:12px 18px;background:#15171f;color:#f4efe8!important;font-weight:600;border-radius:2px;text-decoration:none}
+  .skip-link:focus{top:12px;outline:2px solid #7a1f33;outline-offset:2px}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <header id="top">
   <a class="logo" href="/"><img class="pep-logo" src="/pinnacle-logo.webp" width="532" height="380" alt="Pinnacle Estate Properties, Inc."><small>Cedrick J. Grizzard · Real Estate Agent · DRE&nbsp;#01996416</small></a>
@@ -155,11 +162,11 @@
     <a href="/#marketing">Marketing</a>
     <a href="/home-value" aria-current="page">Home Valuation</a>
     <a href="/grizzlist">The Grizzlist</a>
-    <a class="cta" href="https://calendly.com/ced-west/60min" target="_blank" rel="noopener">Book a consult</a>
+    <a class="cta" href="https://calendly.com/ced-west/60min" target="_blank" rel="noopener">Book a consult<span class="sr-only"> (opens in new tab)</span></a>
   </nav>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
   <section class="hero">
     <div class="intro">
       <div class="eyebrow">Free home value estimate · Southern California</div>
@@ -326,12 +333,13 @@
 </div>
 <div style="display: flex; flex-direction: column; gap: 0;">
 <div class="cw-social" style="display: flex; gap: 22px; align-items: center; padding: 4px 0;">
-<a href="https://www.facebook.com/cedwestrealty" target="_blank" rel="noopener" aria-label="Cedrick J. Grizzard on Facebook" title="Facebook"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
-<a href="https://www.instagram.com/cedwestrealty" target="_blank" rel="noopener" aria-label="Cedrick J. Grizzard on Instagram" title="Instagram"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.2-.1 1.6-.1 4.8-.1zm0 3.3a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zm0 10.7a4.2 4.2 0 1 1 0-8.4 4.2 4.2 0 0 1 0 8.4zm6.8-10.9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></svg></a>
-<a href="https://x.com/cedwestrealty" target="_blank" rel="noopener" aria-label="Cedrick J. Grizzard on X" title="X"><svg viewBox="0 0 24 24" width="27" height="27" fill="currentColor" aria-hidden="true"><path d="M18.2 2.3h3.4l-7.4 8.4 8.7 11.5h-6.8l-5.3-7-6.1 7H1.3l7.9-9L.8 2.3h7l4.8 6.4 5.6-6.4zm-1.2 17.9h1.9L7.1 4.2H5.1l11.9 16z"/></svg></a>
-<a href="https://www.tiktok.com/@cedwestrealty" target="_blank" rel="noopener" aria-label="Cedrick J. Grizzard on TikTok" title="TikTok"><svg viewBox="0 0 24 24" width="27" height="27" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+<a href="https://www.facebook.com/cedwestrealty" target="_blank" rel="noopener" aria-label="Cedrick J. Grizzard on Facebook (opens in new tab)" title="Facebook"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
+<a href="https://www.instagram.com/cedwestrealty" target="_blank" rel="noopener" aria-label="Cedrick J. Grizzard on Instagram (opens in new tab)" title="Instagram"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.2-.1 1.6-.1 4.8-.1zm0 3.3a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zm0 10.7a4.2 4.2 0 1 1 0-8.4 4.2 4.2 0 0 1 0 8.4zm6.8-10.9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></svg></a>
+<a href="https://x.com/cedwestrealty" target="_blank" rel="noopener" aria-label="Cedrick J. Grizzard on X (opens in new tab)" title="X"><svg viewBox="0 0 24 24" width="27" height="27" fill="currentColor" aria-hidden="true"><path d="M18.2 2.3h3.4l-7.4 8.4 8.7 11.5h-6.8l-5.3-7-6.1 7H1.3l7.9-9L.8 2.3h7l4.8 6.4 5.6-6.4zm-1.2 17.9h1.9L7.1 4.2H5.1l11.9 16z"/></svg></a>
+<a href="https://www.tiktok.com/@cedwestrealty" target="_blank" rel="noopener" aria-label="Cedrick J. Grizzard on TikTok (opens in new tab)" title="TikTok"><svg viewBox="0 0 24 24" width="27" height="27" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
 </div>
 <a href="#top" style="padding: 4px 0;">Back to top</a>
+<a href="/accessibility" style="padding: 4px 0;">Accessibility</a>
 <span>© 2026 Cedrick J. Grizzard · Pinnacle Estate Properties Inc. All rights reserved.</span>
 </div>
 </footer>
@@ -394,7 +402,7 @@
 <nav class="cw-mobile-bar" aria-label="Quick contact">
 <a href="tel:+13237339378">Call</a>
 <a href="sms:+13237339378">Text</a>
-<a href="https://calendly.com/ced-west/60min" target="_blank" rel="noopener">Book</a>
+<a href="https://calendly.com/ced-west/60min" target="_blank" rel="noopener">Book<span class="sr-only"> (opens in new tab)</span></a>
 </nav>
 <script src="https://js.hcaptcha.com/1/api.js?recaptchacompat=off" async defer></script>
 </body>
