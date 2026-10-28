@@ -362,6 +362,7 @@
     var data = {};
     new FormData(form).forEach(function (v, k) { data[k] = v; });
     delete data.redirect;
+    delete data['g-recaptcha-response'];
     btn.disabled = true;
     btn.textContent = 'Sending…';
     status.className = 'status';
@@ -373,7 +374,7 @@
     })
       .then(function (r) { return r.json(); })
       .then(function (res) {
-        if (!res.success) throw new Error(res.message || 'Request failed');
+        if (!res.success) { console.warn('Web3Forms:', res.message); throw new Error(res.message || 'Request failed'); }
         form.reset();
         if (window.hcaptcha) { try { hcaptcha.reset(); } catch (err) {} }
         showThanks();
@@ -395,6 +396,6 @@
 <a href="sms:+13237339378">Text</a>
 <a href="https://calendly.com/ced-west/60min" target="_blank" rel="noopener">Book</a>
 </nav>
-<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+<script src="https://js.hcaptcha.com/1/api.js?recaptchacompat=off" async defer></script>
 </body>
 </html>

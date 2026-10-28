@@ -391,7 +391,7 @@ select{appearance:auto}
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify(data)
     }).then(function (r) { return r.json(); }).then(function (res) {
-      if (!res.success) throw new Error(res.message);
+      if (!res.success) { console.warn('Web3Forms:', res.message); throw new Error(res.message); }
       form.innerHTML = '<h3 style="margin:0;font-family:\'Bodoni Moda\',Georgia,serif;font-weight:500;font-size:32px;color:#7a1f33;">Thank you. Message received.</h3>' +
         '<p style="margin:0;font-size:17px;line-height:1.7;color:#3a3b42;">Ced will follow up personally. If it’s urgent, call <a href="tel:+13237339378" style="font-weight:600;color:#15171f;">323-733-WEST (9378)</a>.</p>';
     }).catch(function () {
@@ -404,6 +404,6 @@ select{appearance:auto}
 })();
 </script>
 
-<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+<script src="https://js.hcaptcha.com/1/api.js?recaptchacompat=off" async defer></script>
 </body>
 </html>
