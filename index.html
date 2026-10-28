@@ -278,16 +278,16 @@ select{appearance:auto}
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px;">
 <div style="display: flex; flex-direction: column; gap: 6px;">
 <label for="cw-name" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">Name</label>
-<input id="cw-name" type="text" autocomplete="name" style="box-sizing: border-box; width: 100%; height: 48px; padding: 0 14px; font-size: 16px; border: 1px solid #8a8378; background: #ffffff; border-radius: 2px;">
+<input id="cw-name" type="text" maxlength="100" autocomplete="name" style="box-sizing: border-box; width: 100%; height: 48px; padding: 0 14px; font-size: 16px; border: 1px solid #8a8378; background: #ffffff; border-radius: 2px;">
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px;">
 <label for="cw-phone" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">Phone</label>
-<input id="cw-phone" type="tel" autocomplete="tel" style="box-sizing: border-box; width: 100%; height: 48px; padding: 0 14px; font-size: 16px; border: 1px solid #8a8378; background: #ffffff; border-radius: 2px;">
+<input id="cw-phone" type="tel" maxlength="30" autocomplete="tel" style="box-sizing: border-box; width: 100%; height: 48px; padding: 0 14px; font-size: 16px; border: 1px solid #8a8378; background: #ffffff; border-radius: 2px;">
 </div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px;">
 <label for="cw-email" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">Email</label>
-<input id="cw-email" type="email" autocomplete="email" style="box-sizing: border-box; width: 100%; height: 48px; padding: 0 14px; font-size: 16px; border: 1px solid #8a8378; background: #ffffff; border-radius: 2px;">
+<input id="cw-email" type="email" maxlength="254" autocomplete="email" style="box-sizing: border-box; width: 100%; height: 48px; padding: 0 14px; font-size: 16px; border: 1px solid #8a8378; background: #ffffff; border-radius: 2px;">
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px;">
 <label for="cw-goal" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">I’m looking to</label>
@@ -301,8 +301,9 @@ select{appearance:auto}
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px;">
 <label for="cw-msg" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">A few details</label>
-<textarea id="cw-msg" rows="4" style="box-sizing: border-box; width: 100%; padding: 12px 14px; font-size: 16px; line-height: 1.5; border: 1px solid #8a8378; background: #ffffff; border-radius: 2px; resize: vertical;"></textarea>
+<textarea id="cw-msg" rows="4" maxlength="3000" style="box-sizing: border-box; width: 100%; padding: 12px 14px; font-size: 16px; line-height: 1.5; border: 1px solid #8a8378; background: #ffffff; border-radius: 2px; resize: vertical;"></textarea>
 </div>
+<input id="cw-bot" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;">
 <button type="submit" style="height: 54px; padding: 0 28px; background: #15171f; color: #f4efe8; font-family: inherit; font-size: 16px; font-weight: 600; border: 0; border-radius: 2px; cursor: pointer;">Send to Ced</button>
 <p class="cw-privacy">Ced uses your information only to respond to your request. It is never sold or shared.</p>
 </form>
@@ -374,6 +375,8 @@ select{appearance:auto}
       return;
     }
     var label = btn.textContent;
+    var bot = document.getElementById('cw-bot');
+    if (bot && bot.checked) { form.innerHTML = '<p style="margin:0;">Thank you.</p>'; return; }
     btn.disabled = true; btn.textContent = 'Sending…'; note.textContent = '';
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
