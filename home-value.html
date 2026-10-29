@@ -120,7 +120,7 @@
   header{padding:14px 20px !important;gap:10px !important}
   header nav{gap:2px 18px !important;width:100%;justify-content:center !important}
   header{justify-content:center !important}
-  header nav a:not(.cta):not([href*="calendly"]):not(.gz-nav-btn){padding:8px 0 !important}
+  header nav a:not(.cta):not([href*="calendly"]):not(.gz-nav-btn):not(.hv-nav-btn){padding:8px 0 !important}
   footer{padding:32px 20px !important;gap:18px 32px !important}
 }
 @media (max-width:720px){
@@ -153,6 +153,11 @@
   header nav a.gz-nav-btn{display:inline-flex;align-items:center;padding:12px 20px!important;background-color:#15171f;background-image:repeating-linear-gradient(90deg,rgba(244,239,232,.16) 0,rgba(244,239,232,.16) 1px,transparent 1px,transparent 7px);color:#f4efe8!important;font-weight:600;letter-spacing:.02em;border-radius:2px;box-shadow:inset 0 0 0 1px #15171f}
   header nav a.gz-nav-btn:hover,header nav a.gz-nav-btn:focus-visible{color:#e8b9c2!important;box-shadow:inset 0 0 0 1px #7a1f33}
   header nav a.gz-nav-btn[aria-current="page"]{color:#e8b9c2!important}
+
+  /* Home Valuation burgundy nav button */
+  header nav a.hv-nav-btn{display:inline-flex;align-items:center;padding:12px 20px!important;background:#7a1f33;color:#ffffff!important;font-weight:600;border-radius:2px}
+  header nav a.hv-nav-btn:hover,header nav a.hv-nav-btn:focus-visible{background:#15171f;color:#f4efe8!important}
+  header nav a.hv-nav-btn[aria-current="page"]{color:#ffffff!important;box-shadow:inset 0 -3px 0 #e8b9c2}
 </style>
 </head>
 <body>
@@ -165,7 +170,7 @@
     <a href="/#services">Services</a>
     <a href="/#management">Property Management</a>
     <a href="/#marketing">Marketing</a>
-    <a href="/home-value" aria-current="page">Home Valuation</a>
+    <a href="/home-value" class="hv-nav-btn" aria-current="page">Home Valuation</a>
     <a href="/grizzlist" class="gz-nav-btn">The Grizzlist</a>
     <a class="cta" href="https://calendly.com/ced-west/60min" target="_blank" rel="noopener">Book a consult<span class="sr-only"> (opens in new tab)</span></a>
   </nav>
