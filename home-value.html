@@ -9,9 +9,17 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ced-west.com/home-value">
 <meta property="og:title" content="What's your home worth? Free home value estimate from Cedrick J. Grizzard, Pinnacle Estate Properties Inc.">
-<meta property="og:image" content="https://ced-west.com/portrait.jpg">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://ced-west.com/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cedrick J. Grizzard, Real Estate Agent, DRE #01996416, Pinnacle Estate Properties, Inc.">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:description" content="A personal comparative market analysis based on recent sales near you. No cost, no obligation.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#15171f">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -75,6 +83,7 @@
   .choices input:checked + span { background: var(--ink); border-color: var(--ink); color: var(--bg); }
   .choices input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
   .consent { margin: 0 0 18px; font-size: 13px; line-height: 1.6; color: #56555b; }
+  .consent a { color: var(--ink); text-decoration: underline; font-weight: 600; }
   button[type=submit] { width: 100%; height: 56px; padding: 0 28px; background: var(--ink); color: var(--bg); font: inherit; font-size: 16px; font-weight: 600; border: 0; border-radius: 2px; cursor: pointer; }
   button[type=submit]:hover { background: var(--accent); }
   button[disabled] { opacity: 0.6; cursor: wait; }
@@ -309,7 +318,7 @@
         </fieldset>
 
         <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" style="min-height:78px;"></div>
-        <p class="consent">By submitting, you agree that Cedrick J. Grizzard may contact you by phone, text, or email about your request. No obligation, and your information is never sold.</p>
+        <p class="consent">By submitting, you agree that Cedrick J. Grizzard may contact you by phone, text, or email about your request. No obligation, and your information is never sold. See our <a href="/privacy">Privacy Policy</a>.</p>
         <button type="submit">Get my home value</button>
         <div class="status" id="hv-status" role="status" aria-live="polite"></div>
       </form>
@@ -350,6 +359,7 @@
 </div>
 <a href="#top" style="padding: 4px 0;">Back to top</a>
 <a href="/accessibility" style="padding: 4px 0;">Accessibility</a>
+<a href="/privacy" style="padding: 4px 0;">Privacy Policy</a>
 <span>© 2026 Cedrick J. Grizzard · Pinnacle Estate Properties Inc. All rights reserved.</span>
 </div>
 </footer>

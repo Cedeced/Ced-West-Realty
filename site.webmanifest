@@ -1,0 +1,12 @@
+{
+  "name": "Cedrick J. Grizzard | Pinnacle Estate Properties, Inc.",
+  "short_name": "Ced Grizzard",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#15171f",
+  "background_color": "#f4efe8",
+  "display": "browser",
+  "start_url": "/"
+}
